@@ -695,118 +695,112 @@
             color: var(--medium-text);
         }
 
-        /* Resources Section */
-        .resources {
-            background-color: var(--deep-black);
+        /* Silent Observer Section */
+        #my-book {
+            background-color: var(--rich-black);
             position: relative;
         }
 
-        .resources:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
-            opacity: 0.03;
-        }
-
-        .resources-grid {
+        #my-book .silent-observer-layout {
+            width: min(100%, 1040px);
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .resource-card {
-            text-align: center;
-            padding: 40px 25px;
-            border-radius: var(--border-radius);
-            background-color: var(--charcoal);
-            transition: var(--transition);
-            opacity: 0;
-            transform: translateY(30px);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(212, 175, 55, 0.1);
-        }
-
-        .resource-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gold-gradient);
-            transform: scaleX(0);
-            transition: var(--transition);
-        }
-
-        .resource-card:hover:before {
-            transform: scaleX(1);
-        }
-
-        .resource-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .resource-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-            border-color: rgba(212, 175, 55, 0.3);
-        }
-
-        .resource-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            background: var(--charcoal);
-            border: 2px solid var(--warm-gold);
-            border-radius: 50%;
-            display: flex;
+            grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
             align-items: center;
-            justify-content: center;
+            gap: clamp(40px, 8vw, 100px);
+        }
+
+        #my-book .silent-observer-eyebrow {
+            margin-bottom: 16px;
+            color: var(--light-gold);
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        #my-book .silent-observer-copy h2 {
+            margin-bottom: 28px;
             color: var(--warm-gold);
-            font-size: 2rem;
-            transition: var(--transition);
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            text-align: left;
         }
 
-        .resource-card:hover .resource-icon {
-            transform: scale(1.1);
-            background: var(--gold-gradient);
-            color: var(--rich-black);
+        #my-book .silent-observer-copy h2:after {
+            left: 0;
+            width: 58px;
+            transform: none;
         }
 
-        .resource-card h3 {
-            color: var(--warm-gold);
+        #my-book .silent-observer-hook {
+            margin-bottom: 22px;
+            color: var(--light-text);
+            font-size: clamp(1.2rem, 2vw, 1.55rem);
+            line-height: 1.5;
         }
 
-        .resource-card p {
+        #my-book .silent-observer-subtitle {
+            margin-bottom: 20px;
+            color: var(--light-text);
+            font-family: 'Cinzel', serif;
+            font-size: 1.15rem;
+            line-height: 1.6;
+        }
+
+        #my-book .silent-observer-copy p {
+            max-width: 580px;
+        }
+
+        #my-book .silent-observer-note {
+            margin: 26px 0 30px;
+            padding-left: 18px;
+            border-left: 2px solid var(--warm-gold);
+            color: var(--light-gold);
+            font-family: 'Cinzel', serif;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        #my-book .silent-observer-note small {
+            display: block;
+            margin-bottom: 5px;
             color: var(--medium-text);
-            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.78rem;
         }
 
-        .download-btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 8px 20px;
-            background: transparent;
-            color: var(--warm-gold);
-            border: 1px solid var(--warm-gold);
-            border-radius: 50px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: var(--transition);
+        #my-book .silent-observer-cta {
+            margin-top: 4px;
         }
 
-        .download-btn:hover {
-            background: var(--gold-gradient);
-            color: var(--rich-black);
-            transform: translateY(-3px);
+        #my-book .silent-observer-visual {
+            margin: 0;
+            text-align: center;
+        }
+
+        #my-book .silent-observer-visual img {
+            width: min(100%, 360px);
+            margin: 0 auto;
+            aspect-ratio: 2 / 3;
+            object-fit: cover;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(212, 175, 55, 0.18);
+        }
+
+        #my-book .silent-observer-visual figcaption {
+            margin-top: 14px;
+            color: var(--medium-text);
+            font-size: 0.82rem;
+        }
+
+        @media (max-width: 768px) {
+            #my-book .silent-observer-layout {
+                grid-template-columns: 1fr;
+                gap: 42px;
+            }
+
+            #my-book .silent-observer-visual img {
+                width: min(78%, 340px);
+            }
         }
 
         /* Contact Section */
@@ -1197,7 +1191,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#blog">Blog</a></li>
-                <li><a href="#resources">Resources</a></li>
+                <li><a href="#my-book">My Book</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -1344,52 +1338,26 @@
         </div>
     </section>
 
-    <!-- Resources Section -->
-    <section class="resources" id="resources">
+    <!-- Silent Observer Book Section -->
+    <section id="my-book" aria-labelledby="silent-observer-title">
         <div class="container">
-            <h2>Free Resources</h2>
-            <div class="resources-grid">
-                 <div class="resource-card" id="resource-1">
-                    <div class="resource-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h3>Silent Observer</h3>
-                    <p>Want to think deeper, observe better, and grow wiser? This book is for every aspiring Silent Observer.</p>
-                    <a href="./SILENT OBSERVER.pdf" class="download-btn" target="_blank">Download Now</a>
-                </div> 
-                
-                <div class="resource-card" id="resource-2">
-                    <div class="resource-icon">
-                        <i class="fas fa-download"></i>
-                    </div>
-                    <h3>Free Guide</h3>
-                    <p>Download my free guide "7 Days to Better Habits" and start building positive changes today.</p>
-                    <a href="./FREE GUIDE BY SHAHAB RAJPER.pdf" class="download-btn">Download Now</a>
+            <div class="silent-observer-layout">
+                <div class="silent-observer-copy">
+                    <p class="silent-observer-eyebrow">My Book: Silent Observer</p>
+                    <h2 id="silent-observer-title">Silent Observer</h2>
+                    <h3 class="silent-observer-hook">What changes when you notice the mind before it carries you away?</h3>
+                    <p class="silent-observer-subtitle">The Art of Seeing, Understanding, and Growing Through Life</p>
+                    <p><em>Silent Observer</em> begins with a pause. In a difficult exchange, a rush of worry, or a familiar irritation, the book asks what might change if you notice what is happening within you before reacting to what is happening around you. Its central practice is attentive, nonjudgmental observation: not withdrawal from life, but a little more room to choose how to meet it.</p>
+                    <p>From there, the book moves through the inner terrain of everyday experience. It invites readers to return to the senses when the mind races ahead, to notice thoughts without mistaking them for facts or instructions, and to look beneath emotion toward the needs it may be signaling. It also examines the labels we place on ourselves and others, the voice of the inner critic, and the possibility that identity can keep changing.</p>
+                    <p>These ideas meet ordinary life rather than staying abstract. The chapters consider how to speak honestly without blame, respond to imperfection with compassion, and distinguish accepting what cannot be changed from giving up the ability to act. Even a routine task or a tense conversation can become a chance to notice, understand, and respond with greater intention.</p>
+                    <p>The invitation is practical and personal: What am I feeling right now? What might this reaction be asking me to understand? What is within my control, and what response would reflect the person I want to be? One chapter, “The Art of Growing,” carries that inquiry into the small choices through which change takes shape.</p>
+                    <p class="silent-observer-note"><small>A thought to carry with you</small>A thought may arrive uninvited; noticing it can make space for what you choose next.</p>
+                    <a class="btn btn-primary silent-observer-cta" href="./SILENT%20OBSERVER.pdf" target="_blank" rel="noopener">Read Silent Observer</a>
                 </div>
-                
-                <div class="resource-card" id="resource-3">
-                    <div class="resource-icon">
-                        <i class="fas fa-play-circle"></i>
-                    </div>
-                    <a href="https://www.facebook.com/share/17UC9NYKkB/" 
-                         class="video-card" 
-                         target="_blank">
-                             <h3>Access My videos</h3>
-                             <p>Transform your self-doubt into unshakable confidence  watch now.</p>
-                        </a>
-                </div>
-                
-                <div class="resource-card" id="resource-4">
-                    <div class="resource-icon">
-                        <i class="fas fa-tasks"></i>
-                    </div>
-                    <a href="./7_Days_to_Better_Habits_Worksheet.xlsx" 
-   download 
-   class="download-card">
-  <h3>Download My 7-Day Habits Worksheet</h3>
-  <p>Apply life-changing concepts from my articles and start building better habits today!</p>
-</a>
-                </div>
+                <figure class="silent-observer-visual">
+                    <img src="./silent-observer-cover.jpg" alt="Cover of Silent Observer by Shahab Rajper, subtitled The Art of Seeing, Understanding, and Growing Through Life." width="1024" height="1536" loading="lazy" decoding="async">
+                    <figcaption>Cover artwork for <em>Silent Observer</em></figcaption>
+                </figure>
             </div>
         </div>
     </section>
@@ -1471,7 +1439,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#blog">Blog</a></li>
-                        <li><a href="#resources">Resources</a></li>
+                        <li><a href="#my-book">My Book</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
